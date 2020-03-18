@@ -1,7 +1,7 @@
 #simipay
 
 
-#通用：
+#通用：				
 	时间戳过时时间15秒                              
 	加密signature：带有page字段的page不需要带入加密参数
 	          sha256_HMAC(所有参数 ,"接口名称", key)
@@ -11,7 +11,7 @@
 		              access_key，uid，tonce（添加用户关联信息）
 		              access_key，tonce（查询所有用户资产）
 
-#获取用户资产
+#获取用户资产						
 URL:http://localhost:8422/api/getBalance
 传参:
 	access_key	string		
@@ -19,7 +19,7 @@ URL:http://localhost:8422/api/getBalance
 	tnonce		string	时间戳
 	signature	string	加密后的sign（sha256_HMAC加密）
 
-#更新用户资产
+#更新用户资产				
 URL:http://localhost:8422/api/updateBalance
 传参:
 	access_key	string		
@@ -29,7 +29,7 @@ URL:http://localhost:8422/api/updateBalance
 	signature	string	加密后的sign（sha256_HMAC加密）
 
 
-#添加用户关联信息
+#添加用户关联信息			
 URL:http://localhost:8422/api/addUser
 传参:
 	access_key	string		
@@ -37,7 +37,7 @@ URL:http://localhost:8422/api/addUser
 	tnonce		string	时间戳
 	signature	string	加密后的sign（sha256_HMAC加密）
 
-#查询所有用户资产
+#查询所有用户资产			
 URL:http://localhost:8422/api/getUserAllBalance
 传参:
 	access_key	string		
