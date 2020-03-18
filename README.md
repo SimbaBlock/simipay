@@ -3,12 +3,12 @@
 # 通用 #
 	时间戳过时时间15秒                              
 	加密signature：带有page字段的page不需要带入加密参数
-	          sha256_HMAC(所有参数 ,"接口名称", key)
-	          所有参数依次:
-		              access_key，uid，tonce（获取用户资产）
-		              access_key，uid，change，tonce（更新用户资产）
-		              access_key，uid，tonce（添加用户关联信息）
-		              access_key，tonce（查询所有用户资产）
+	signature = sha256_HMAC(所有参数 ,"接口名称", key)
+	所有参数依次:
+		access_key，uid，tonce（获取用户资产）
+		access_key，uid，change，tnonce（更新用户资产）
+		access_key，uid，tonce（添加用户关联信息）
+		access_key，tonce（查询所有用户资产）
 
 # 获取用户资产#		  						
     URL:http://localhost:8422/api/getBalance		
