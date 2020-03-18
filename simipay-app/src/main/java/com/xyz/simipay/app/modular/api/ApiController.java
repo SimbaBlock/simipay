@@ -24,11 +24,9 @@ import com.xyz.simipay.app.core.util.EncryptUtil;
 import com.xyz.simipay.app.core.util.JsonResult;
 import com.xyz.simipay.app.modular.api.vo.UserAssetsVo;
 import com.xyz.simipay.app.modular.system.model.Access;
-import com.xyz.simipay.app.modular.system.model.Data;
 import com.xyz.simipay.app.modular.system.model.Log;
 import com.xyz.simipay.app.modular.system.model.User;
 import com.xyz.simipay.app.modular.system.service.AccessService;
-import com.xyz.simipay.app.modular.system.service.DataService;
 import com.xyz.simipay.app.modular.system.service.LogService;
 import com.xyz.simipay.app.modular.system.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -271,7 +269,7 @@ public class ApiController extends BaseController {
             size = total/limit + 1;
         }
 
-        return new JsonResult().addData("list",list).addData("total",String.valueOf(total)).addData("size",String.valueOf(size));
+        return new JsonResult().addData("list",list).addData("total",String.valueOf(total)).addData("page",String.valueOf(size));
 
     }
 

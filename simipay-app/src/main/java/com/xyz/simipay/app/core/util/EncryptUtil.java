@@ -47,14 +47,13 @@ public class EncryptUtil {
 		String hash = "";
 
 		String message ="POST|"+url+"|"+ getDigest(map);
-		System.out.println(message);
 		try {
 			Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
 			SecretKeySpec secret_key = new SecretKeySpec(secret.getBytes(), "HmacSHA256");
 			sha256_HMAC.init(secret_key);
 			byte[] bytes = sha256_HMAC.doFinal(message.getBytes());
 			hash = byteArrayToHexString(bytes);
-			System.out.println(hash);
+
 		} catch (Exception e) {
 		}
 		return hash;
