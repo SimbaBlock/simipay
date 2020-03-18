@@ -1,7 +1,7 @@
 #simipay
 
 
-#通用：				
+#通用：#			
 	时间戳过时时间15秒                              
 	加密signature：带有page字段的page不需要带入加密参数
 	          sha256_HMAC(所有参数 ,"接口名称", key)
