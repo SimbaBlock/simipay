@@ -17,6 +17,7 @@
 	  uid		string	用户uid
 	  tnonce	string	时间戳
 	  signature	string	加密后的sign（sha256_HMAC加密）
+	  currency  string  币种
 
 # 更新用户资产			
     URL:http://localhost:8422/api/updateBalance
@@ -26,7 +27,7 @@
 	  change	string       (正数代表加资产，负数代表减资产)
 	  tnonce	string	时间戳
 	  signature	string	加密后的sign（sha256_HMAC加密）
-
+      currency  string  币种
 
 # 添加用户关联信息			
     URL:http://localhost:8422/api/addUser
@@ -42,4 +43,5 @@
 	  access_key	string		
 	  tnonce	string	时间戳
 	  signature	string	加密后的sign（sha256_HMAC加密）
-	  page		页数
+	  page		int      页数
+	  currency  string  币种

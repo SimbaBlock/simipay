@@ -32,7 +32,7 @@
 				#{name,jdbcType=VARCHAR},
 			</if>
 			<if test="uid != null" >
-				#{uid,jdbcType=INTEGER},
+				#{uid,jdbcType=VARCHAR},
 			</if>
 			<if test="type != null" >
 				#{type,jdbcType=INTEGER},

@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class UserAssetsVo {
 
-    private Integer uid;
+    private String uid;
 
     private String balance;
 

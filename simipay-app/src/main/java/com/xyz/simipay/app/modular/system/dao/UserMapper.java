@@ -42,7 +42,7 @@ public interface UserMapper extends BaseMapper<User> {
     /**
      * 查询用户
      */
-    User findByUserId(Integer userId);
+    User findByUserId(String userId);
 
     List<User> findAllList(Map<String, Object> params);
 

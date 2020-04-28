@@ -19,19 +19,15 @@ import cn.hutool.core.util.RandomUtil;
 import com.xyz.simipay.app.modular.system.dao.UserMapper;
 import com.xyz.simipay.app.modular.system.model.User;
 import com.xyz.simipay.app.modular.system.service.UserService;
-import com.xyz.simipay.app.core.sms.*;
 import cn.stylefeng.roses.core.datascope.DataScope;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 /**
  * <p>
@@ -54,7 +50,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
-    public User findByUserId(Integer userId) {
+    public User findByUserId(String userId) {
         return userMapper.findByUserId(userId);
     }
 

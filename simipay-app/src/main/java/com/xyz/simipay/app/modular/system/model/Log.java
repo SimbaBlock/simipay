@@ -17,7 +17,7 @@ public class Log extends Model<Log> {
 
     private String name;
 
-    private Integer uid;
+    private String uid;
 
     private Integer type;
 
@@ -37,11 +37,11 @@ public class Log extends Model<Log> {
         this.name = name;
     }
 
-    public Integer getUid() {
+    public String getUid() {
         return uid;
     }
 
-    public void setUid(Integer uid) {
+    public void setUid(String uid) {
         this.uid = uid;
     }
 

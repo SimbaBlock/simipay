@@ -121,6 +121,9 @@ public enum BizExceptionEnum implements AbstractBaseExceptionEnum {
     /**
      * 资产
      */
+
+    BALANCE_NOT_ENOUGH(200202, "用户资产余额不足"),
+
     UPDATE_BALANCE_ERROR(200101, "用户资产更新失败"),
 
     API_TIME_OUT_ERROR(100101, "验证时间超时"),
@@ -128,6 +131,8 @@ public enum BizExceptionEnum implements AbstractBaseExceptionEnum {
     API_SIGN_ERROR(100102, "验证错误"),
 
     ADD_USER_ERROR(300100, "当前用户已存在"),
+
+    REPEAT_PAY_CODE_ERROR(200100, "重复单号")
 
     ;
 

@@ -15,7 +15,6 @@
  */
 package com.xyz.simipay.app.modular.system.service;
 
-import com.xyz.simipay.app.core.sms.SmsChannelTemplateEnum;
 import com.xyz.simipay.app.modular.system.model.User;
 import cn.stylefeng.roses.core.datascope.DataScope;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -42,7 +41,7 @@ public interface UserService extends IService<User> {
     /**
      * 查询用户
      */
-    User findByUserId(Integer userId);
+    User findByUserId(String userId);
 
     List<User> findAllList(Map<String, Object> params);
 

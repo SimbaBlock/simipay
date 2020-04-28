@@ -23,21 +23,33 @@ public class User extends Model<User> {
     /**
      * 主键id
      */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "system_id", type = IdType.AUTO)
+    private Integer systemId;
     /**
      * 用户id
      */
-    private Integer userId;
-    /**
-     * 撮合id
-     */
-    private Long systemId;
+    private String userId;
 
     /**
      * 标识
      */
     private Integer openId;
+
+    public Integer getSystemId() {
+        return systemId;
+    }
+
+    public void setSystemId(Integer systemId) {
+        this.systemId = systemId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     public Integer getOpenId() {
         return openId;
@@ -47,33 +59,9 @@ public class User extends Model<User> {
         this.openId = openId;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public Long getSystemId() {
-        return systemId;
-    }
-
-    public void setSystemId(Long systemId) {
-        this.systemId = systemId;
-    }
-
     @Override
     protected Serializable pkVal() {
-        return this.id;
+        return this.systemId;
     }
 
 }

@@ -8,7 +8,7 @@ import java.util.Date;
 public class CoinApi {
 
 		//撮合
-	private static final String url = "http://192.168.0.40:8765";
+	private static final String url = "http://116.62.126.223:8080";
 
 
 	/**
@@ -18,14 +18,14 @@ public class CoinApi {
 	 * @return
 	 * @throws Exception
 	 */
-	public static JSONObject updateBalance(Long uid, String change) throws Exception {
+	public static JSONObject updateBalance(Long uid, String change, String coin) throws Exception {
 
 		JSONObject json = new JSONObject();
 		json.put("id", 1000);
 		json.put("method", "balance.update");
 		JSONArray jsons = new JSONArray();
 		jsons.add(uid);
-		jsons.add("SIMI");
+		jsons.add(coin.toLowerCase());
 		jsons.add("");
 		jsons.add(new Date().getTime());
 		jsons.add(change);
@@ -44,14 +44,14 @@ public class CoinApi {
 	 * @return
 	 * @throws Exception
 	 */
-	public static JSONObject queryBalance(Long uid) throws Exception {
+	public static JSONObject queryBalance(Long uid, String coin) throws Exception {
 
 		JSONObject json = new JSONObject();
 		json.put("id", 1000);
 		json.put("method", "balance.query");
 		JSONArray jsons = new JSONArray();
 		jsons.add(uid);
-		jsons.add("SIMI");
+		jsons.add(coin.toLowerCase());
 		json.put("params", jsons);
 
 		JSONObject JSON = HttpResult(json.toString());
@@ -66,14 +66,14 @@ public class CoinApi {
 	 * @return
 	 * @throws Exception
 	 */
-	public static JSONObject balanceHistory(Long uid, Integer offset, Integer limit) throws Exception {
+	public static JSONObject balanceHistory(Long uid, Integer offset, Integer limit, String coin) throws Exception {
 
 		JSONObject json = new JSONObject();
 		json.put("id", 1000);
 		json.put("method", "balance.history");
 		JSONArray jsons = new JSONArray();
 		jsons.add(uid);
-		jsons.add("SIMI");
+		jsons.add(coin.toLowerCase());
 		jsons.add("");
 		jsons.add(0);
 		jsons.add(0);

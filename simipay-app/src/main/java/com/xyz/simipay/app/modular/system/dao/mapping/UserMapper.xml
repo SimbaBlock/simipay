@@ -4,14 +4,13 @@
 
 	<!-- 通用查询映射结果 -->
 	<resultMap id="BaseResultMap" type="com.xyz.simipay.app.modular.system.model.User">
-		<id column="id" property="id" />
+		<id column="system_id" property="systemId" />
 		<result column="user_id" property="userId" />
-		<result column="system_id" property="systemId" />
 		<result column="open_id" property="openId" />
 	</resultMap>
 
 	<sql id="Base_Column_List">
-		id, user_id, system_id, open_id
+		system_id, user_id, open_id
 	</sql>
 
 
@@ -39,19 +38,13 @@
 			<if test="userId != null" >
 				user_id,
 			</if>
-			<if test="systemId != null" >
-				system_id,
-			</if>
 			<if test="openId != null" >
 				open_id,
 			</if>
 		</trim>
 		<trim prefix="values (" suffix=")" suffixOverrides="," >
 			<if test="userId != null" >
-				#{userId,jdbcType=INTEGER},
-			</if>
-			<if test="systemId != null" >
-				#{systemId,jdbcType=BIGINT},
+				#{userId,jdbcType=VARCHAR},
 			</if>
 			<if test="openId != null" >
 				#{openId,jdbcType=INTEGER},
